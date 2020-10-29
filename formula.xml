@@ -1,0 +1,94 @@
+﻿<?xml version="1.0"  encoding="UTF-8" ?>
+<mopdocument>
+
+<formula>
+ <block>
+  <repetition>1</repetition>
+  <lays>
+   <lay>a</lay>
+  </lays>
+ </block>
+
+ <block>
+  <repetition>3</repetition>
+  <lays>
+   <lay>b</lay>
+   <lay>c</lay>
+  </lays>
+ </block>
+
+ <block>
+  <repetition>1</repetition>
+  <lays>
+   <lay>d</lay>
+  </lays>
+ </block>
+</formula>
+
+<lays>
+ <lay>
+  <alias>a</alias>
+  <thickness>0</thickness>
+  <material>air</material>
+ </lay>
+
+ <lay>
+  <alias>b</alias>
+  <thickness>200</thickness>
+  <material>c-Si</material>
+ </lay>
+
+ <lay>
+  <alias>c</alias>
+  <thickness>300</thickness>
+  <material>SiO2</material>
+ </lay>
+
+ <lay>
+  <alias>d</alias>
+  <thickness>0</thickness>
+  <material>c-Si</material>
+ </lay>
+</lays>
+ 
+<problems>
+ <problem>
+  <range_start>400</range_start>
+  <range_end>1500</range_end>
+  <step_count>100</step_count>
+  <angle>0</angle>
+  <polarization>0</polarization>
+ </problem>
+</problems>
+
+<materials>
+ <material>
+   <name>c-Si</name>
+   <comment>с-Si</comment>
+   <points>
+       <point><w> 100 </w><n> 3.46 </n><k> 0.02 </k></point>
+       <point><w> 2000 </w><n> 3.46 </n><k> 0.02 </k></point>
+   </points>
+ </material>
+
+ <material>
+   <name>SiO2</name>
+   <comment>SiO2</comment>
+   <points>
+       <point><w> 100 </w><n> 1.52 </n><k> 0 </k></point>
+       <point><w> 2000 </w><n> 1.52 </n><k> 0 </k></point>
+   </points>
+ </material>
+
+ <material>
+   <name>air</name>
+   <comment>Air</comment>
+   <points>
+       <point><w> 1 </w><n> 1 </n><k> 0 </k></point>
+       <point><w> 3000 </w><n> 1 </n><k> 0 </k></point>
+   </points>
+ </material>
+
+</materials>
+
+</mopdocument>
