@@ -1,0 +1,693 @@
+object mForm: TmForm
+  Left = 245
+  Height = 610
+  Top = 140
+  Width = 796
+  Caption = 'WMop'
+  ClientHeight = 610
+  ClientWidth = 796
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.2.0.3'
+  object FormTabs: TPageControl
+    Left = 0
+    Height = 610
+    Top = 0
+    Width = 796
+    ActivePage = MaterialTab
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object MaterialTab: TTabSheet
+      Caption = 'Materials'
+      ClientHeight = 582
+      ClientWidth = 788
+      object MatList: TListBox
+        Left = 20
+        Height = 352
+        Top = 96
+        Width = 168
+        ItemHeight = 0
+        OnSelectionChange = MatListSelectionChange
+        TabOrder = 0
+      end
+      object Label5: TLabel
+        Left = 20
+        Height = 15
+        Top = 72
+        Width = 48
+        Caption = 'Materials'
+        ParentColor = False
+      end
+      object k_Chat: TChart
+        Left = 468
+        Height = 197
+        Top = 344
+        Width = 300
+        AxisList = <        
+          item
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Alignment = calBottom
+            Minors = <>
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        ParentColor = False
+        object k_Line: TLineSeries
+          LinePen.Color = 4227327
+        end
+      end
+      object n_Chat: TChart
+        Left = 468
+        Height = 200
+        Top = 96
+        Width = 300
+        AxisList = <        
+          item
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Alignment = calBottom
+            Minors = <>
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        ParentColor = False
+        object n_Line: TLineSeries
+          LinePen.Color = 16744448
+        end
+      end
+      object Label6: TLabel
+        Left = 572
+        Height = 15
+        Top = 72
+        Width = 120
+        Caption = 'n = Re( sqrt( epsilon ) )'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 572
+        Height = 15
+        Top = 320
+        Width = 120
+        Caption = 'k = Im( sqrt( epsilon ) )'
+        ParentColor = False
+      end
+      object NewMatBut: TButton
+        Left = 20
+        Height = 25
+        Top = 456
+        Width = 168
+        Caption = 'Add New'
+        OnClick = NewMatButClick
+        TabOrder = 3
+      end
+      object DelMatBut: TButton
+        Left = 20
+        Height = 25
+        Top = 488
+        Width = 168
+        Caption = 'Delete'
+        OnClick = DelMatButClick
+        TabOrder = 4
+      end
+      object matmemo: TMemo
+        Left = 212
+        Height = 240
+        Top = 112
+        Width = 230
+        OnEnter = matmemoEnter
+        OnExit = matmemoEnter
+        ScrollBars = ssAutoBoth
+        TabOrder = 5
+      end
+      object Label8: TLabel
+        Left = 212
+        Height = 15
+        Top = 72
+        Width = 34
+        Caption = 'Values'
+        ParentColor = False
+      end
+      object LoadMat: TButton
+        Left = 20
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Load'
+        OnClick = LoadMatClick
+        TabOrder = 6
+      end
+      object SaveMat: TButton
+        Left = 113
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Save'
+        OnClick = SaveMatClick
+        TabOrder = 7
+      end
+      object ComMatMemo: TMemo
+        Left = 212
+        Height = 61
+        Top = 480
+        Width = 230
+        OnEnter = ComMatMemoExit
+        OnExit = ComMatMemoExit
+        ScrollBars = ssAutoBoth
+        TabOrder = 8
+      end
+      object Label11: TLabel
+        Left = 212
+        Height = 15
+        Top = 456
+        Width = 54
+        Caption = 'Comment'
+        ParentColor = False
+      end
+      object NameMatMemo: TMemo
+        Left = 212
+        Height = 61
+        Top = 392
+        Width = 230
+        OnEnter = NameMatMemoEnter
+        OnExit = NameMatMemoEnter
+        ScrollBars = ssAutoBoth
+        TabOrder = 9
+      end
+      object Label20: TLabel
+        Left = 212
+        Height = 15
+        Top = 368
+        Width = 32
+        Caption = 'Name'
+        ParentColor = False
+      end
+      object Label21: TLabel
+        Left = 212
+        Height = 15
+        Top = 96
+        Width = 115
+        Caption = '1-Wavelength 2-n 3-k'
+        ParentColor = False
+      end
+      object SortMat: TButton
+        Left = 20
+        Height = 25
+        Top = 520
+        Width = 168
+        Caption = 'Sort by name'
+        OnClick = SortMatClick
+        TabOrder = 10
+      end
+    end
+    object TaskTab: TTabSheet
+      Caption = 'Task'
+      ClientHeight = 582
+      ClientWidth = 788
+      object TaskList: TListBox
+        Left = 20
+        Height = 121
+        Top = 360
+        Width = 272
+        ItemHeight = 0
+        OnSelectionChange = TaskListSelectionChange
+        TabOrder = 0
+      end
+      object Label12: TLabel
+        Left = 20
+        Height = 15
+        Top = 336
+        Width = 29
+        Caption = 'Tasks'
+        ParentColor = False
+      end
+      object NewTaskBut: TButton
+        Left = 20
+        Height = 25
+        Top = 488
+        Width = 96
+        Caption = 'Add Task'
+        OnClick = NewTaskButClick
+        TabOrder = 1
+      end
+      object DelTaskBut: TButton
+        Left = 20
+        Height = 25
+        Top = 512
+        Width = 96
+        Caption = 'Delete Task'
+        OnClick = DelTaskButClick
+        TabOrder = 2
+      end
+      object LoadTask: TButton
+        Left = 20
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Load'
+        OnClick = LoadTaskClick
+        TabOrder = 3
+      end
+      object SaveTask: TButton
+        Left = 113
+        Height = 25
+        Top = 24
+        Width = 75
+        Caption = 'Save'
+        OnClick = SaveTaskClick
+        TabOrder = 4
+      end
+      object GroupBox5: TGroupBox
+        Left = 324
+        Height = 57
+        Top = 352
+        Width = 424
+        Caption = 'Wavelength Range'
+        ClientHeight = 39
+        ClientWidth = 420
+        TabOrder = 5
+        object Label14: TLabel
+          Left = 302
+          Height = 15
+          Top = 10
+          Width = 27
+          Caption = 'steps'
+          ParentColor = False
+        end
+        object Label15: TLabel
+          Left = 102
+          Height = 15
+          Top = 10
+          Width = 10
+          Caption = '--'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 206
+          Height = 15
+          Top = 10
+          Width = 18
+          Caption = 'nm'
+          ParentColor = False
+        end
+        object StartWvl: TFloatSpinEdit
+          Left = 14
+          Height = 23
+          Top = 8
+          Width = 80
+          Increment = 1
+          MaxValue = 0
+          MinValue = 0
+          OnEnter = StartWvlEnter
+          OnExit = StartWvlEnter
+          TabOrder = 0
+          Value = 0
+        end
+        object EndWvl: TFloatSpinEdit
+          Left = 118
+          Height = 23
+          Top = 8
+          Width = 82
+          Increment = 1
+          MaxValue = 0
+          MinValue = 0
+          OnEnter = EndWvlEnter
+          OnExit = EndWvlEnter
+          TabOrder = 1
+          Value = 0
+        end
+        object StepEdit: TSpinEdit
+          Left = 334
+          Height = 23
+          Top = 8
+          Width = 74
+          MaxValue = 5000
+          OnEnter = StepEditEnter
+          OnExit = StepEditEnter
+          TabOrder = 2
+          Value = 100
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 356
+        Height = 57
+        Top = 424
+        Width = 140
+        Caption = 'Angle'
+        ClientHeight = 39
+        ClientWidth = 136
+        TabOrder = 6
+        object AngleEdit: TFloatSpinEdit
+          Left = 30
+          Height = 23
+          Top = 8
+          Width = 82
+          Increment = 3
+          MaxValue = 90
+          MinValue = 0
+          OnEnter = AngleEditEnter
+          OnExit = AngleEditEnter
+          TabOrder = 0
+          Value = 0
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 556
+        Height = 57
+        Top = 424
+        Width = 144
+        Caption = 'Polarization'
+        ClientHeight = 39
+        ClientWidth = 140
+        TabOrder = 7
+        object PolarEdit: TFloatSpinEdit
+          Left = 30
+          Height = 23
+          Top = 8
+          Width = 82
+          Increment = 0.2
+          MaxValue = 1
+          MinValue = 0
+          OnEnter = PolarEditEnter
+          OnExit = PolarEditEnter
+          TabOrder = 0
+          Value = 0
+        end
+      end
+      object GroupBox1: TGroupBox
+        Left = 324
+        Height = 120
+        Top = 152
+        Width = 424
+        Caption = 'Lay Properties'
+        ClientHeight = 102
+        ClientWidth = 420
+        TabOrder = 8
+        object Label17: TLabel
+          Left = 390
+          Height = 15
+          Top = 8
+          Width = 18
+          Caption = 'nm'
+          ParentColor = False
+        end
+        object Label18: TLabel
+          Left = 70
+          Height = 15
+          Top = 33
+          Width = 43
+          Caption = 'Material'
+          ParentColor = False
+        end
+        object MatSel: TComboBox
+          Left = 14
+          Height = 23
+          Top = 53
+          Width = 160
+          ItemHeight = 15
+          OnChange = MatSelChange
+          TabOrder = 0
+        end
+        object Label22: TLabel
+          Left = 390
+          Height = 15
+          Top = 40
+          Width = 18
+          Caption = 'nm'
+          ParentColor = False
+        end
+        object Label23: TLabel
+          Left = 390
+          Height = 15
+          Top = 72
+          Width = 18
+          Caption = 'nm'
+          ParentColor = False
+        end
+        object Label24: TLabel
+          Left = 199
+          Height = 15
+          Top = 72
+          Width = 63
+          Caption = 'Wavelength'
+          ParentColor = False
+        end
+        object Label25: TLabel
+          Left = 199
+          Height = 15
+          Top = 40
+          Width = 81
+          Caption = 'Optic thickness'
+          ParentColor = False
+        end
+        object Label26: TLabel
+          Left = 199
+          Height = 15
+          Top = 8
+          Width = 52
+          Caption = 'Thickness'
+          ParentColor = False
+        end
+        object ThiEdit: TFloatSpinEdit
+          Left = 294
+          Height = 23
+          Top = 8
+          Width = 87
+          Increment = 1
+          MaxValue = 0
+          MinValue = 0
+          OnEnter = ThiEditEnter
+          OnExit = ThiEditEnter
+          TabOrder = 1
+          Value = 0
+        end
+        object OptThiEdit: TFloatSpinEdit
+          Left = 294
+          Height = 23
+          Top = 40
+          Width = 87
+          Increment = 1
+          MaxValue = 0
+          MinValue = 0
+          OnEnter = OptThiEditEnter
+          OnExit = OptThiEditEnter
+          TabOrder = 2
+          Value = 0
+        end
+        object WvEdit: TFloatSpinEdit
+          Left = 294
+          Height = 23
+          Top = 72
+          Width = 87
+          Increment = 1
+          MaxValue = 0
+          MinValue = 0
+          OnEnter = WvEditEnter
+          OnExit = WvEditEnter
+          TabOrder = 3
+          Value = 0
+        end
+      end
+      object LayList: TListBox
+        Left = 20
+        Height = 166
+        Top = 106
+        Width = 272
+        ItemHeight = 0
+        OnSelectionChange = LayListSelectionChange
+        TabOrder = 9
+      end
+      object FrmEdit: TEdit
+        Left = 324
+        Height = 23
+        Top = 106
+        Width = 336
+        TabOrder = 10
+        Text = '2b-c1s'
+      end
+      object UpDateFrm: TButton
+        Left = 673
+        Height = 25
+        Top = 104
+        Width = 75
+        Caption = 'Update'
+        OnClick = UpDateFrmClick
+        TabOrder = 11
+      end
+      object Label19: TLabel
+        Left = 20
+        Height = 15
+        Top = 88
+        Width = 23
+        Caption = 'Lays'
+        ParentColor = False
+      end
+      object EvalTaskBut: TButton
+        Left = 196
+        Height = 25
+        Top = 488
+        Width = 96
+        Caption = 'Evaluate'
+        OnClick = EvalTaskButClick
+        TabOrder = 12
+      end
+      object ExportTaskBut: TButton
+        Left = 196
+        Height = 25
+        Top = 512
+        Width = 96
+        Caption = 'Export result'
+        OnClick = ExportTaskButClick
+        TabOrder = 13
+      end
+    end
+    object VisTab: TTabSheet
+      Caption = 'Visualization'
+      ClientHeight = 582
+      ClientWidth = 788
+      object T_Chart: TChart
+        Left = 4
+        Height = 200
+        Top = 24
+        Width = 776
+        AxisList = <        
+          item
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Alignment = calBottom
+            Minors = <>
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        ParentColor = False
+      end
+      object R_Chart: TChart
+        Left = 4
+        Height = 192
+        Top = 320
+        Width = 776
+        AxisList = <        
+          item
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+          end        
+          item
+            Alignment = calBottom
+            Minors = <>
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        ParentColor = False
+      end
+      object ChartListbox2: TChartListbox
+        Left = 52
+        Height = 48
+        Top = 527
+        Width = 728
+        Chart = R_Chart
+        ItemHeight = 0
+        TabOrder = 2
+      end
+      object Label1: TLabel
+        Left = 4
+        Height = 15
+        Top = 8
+        Width = 76
+        Caption = 'Transmittance'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 4
+        Height = 15
+        Top = 304
+        Width = 61
+        Caption = 'Reflectance'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 716
+        Height = 15
+        Top = 512
+        Width = 63
+        Caption = 'Wavelength'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 716
+        Height = 15
+        Top = 224
+        Width = 63
+        Caption = 'Wavelength'
+        ParentColor = False
+      end
+      object ChartListbox1: TChartListbox
+        Left = 52
+        Height = 48
+        Top = 240
+        Width = 728
+        Chart = T_Chart
+        ItemHeight = 0
+        TabOrder = 3
+      end
+      object Label9: TLabel
+        Left = 4
+        Height = 15
+        Top = 256
+        Width = 39
+        Caption = 'PlotList'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 4
+        Height = 15
+        Top = 544
+        Width = 39
+        Caption = 'PlotList'
+        ParentColor = False
+      end
+    end
+  end
+  object opd: TOpenDialog
+    Filter = 'XML|*.xml|All files|*.*'
+    left = 232
+    top = 48
+  end
+  object svd: TSaveDialog
+    Filter = 'XML|*.xml'
+    left = 264
+    top = 48
+  end
+  object exd: TSaveDialog
+    Filter = 'TXT|*.txt|Any|*.*'
+    left = 296
+    top = 48
+  end
+end
